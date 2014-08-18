@@ -1,0 +1,9 @@
+[submodule "OldFormatToCsv"]
+	path = OldFormatToCsv
+	url = https://github.com/NCHUIR/OldFormatToCsv
+[submodule "safSshDspace"]
+	path = safSshDspace
+	url = git@github.com:NCHUIR/safSshDspace.git
+[submodule "csvToDspaceSaf"]
+	path = csvToDspaceSaf
+	url = git@github.com:NCHUIR/csvToDspaceSaf.git

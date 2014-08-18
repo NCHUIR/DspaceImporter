@@ -4,6 +4,15 @@ import os,sys
 from tkinter import *
 from tkinter.filedialog import askdirectory
 
+sys.path.append('OldFormatToCsv/')
+from OldFormatToCsv import OldFormatToCsv
+
+sys.path.append('csvToDspaceSaf/')
+from csvToDspaceSaf import csvToDspaceSaf
+
+sys.path.append('safSshDspace/')
+from safSshDspace import safSshDspace
+
 setting = {
     'AddButtonText':["新增 NTUR 格式","新增 CSV 格式","選定包含 SAF 資料夾"],
     'goButtonText':['轉換為 CSV 格式','轉換為 SAF 格式','上傳至 Dspace'],
@@ -53,7 +62,7 @@ def addDir(i):
     if dirpath:
         print("directory chosen:",dirpath)
 
-        
+
         paths = multiLevelSniff(dirpath,setting['OldFormatReqiredExt'],setting['OldFormatFilteredExt'])
         print("paths:",paths)
 
