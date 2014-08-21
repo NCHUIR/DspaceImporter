@@ -3,7 +3,7 @@
 	url = https://github.com/NCHUIR/OldFormatToCsv
 [submodule "safSshDspace"]
 	path = safSshDspace
-	url = git@github.com:NCHUIR/safSshDspace.git
+	url = https://github.com/NCHUIR/safSshDspace
 [submodule "csvToDspaceSaf"]
 	path = csvToDspaceSaf
-	url = git@github.com:NCHUIR/csvToDspaceSaf.git
+	url = https://github.com/NCHUIR/csvToDspaceSaf
