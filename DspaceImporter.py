@@ -410,7 +410,7 @@ def buildGUI():
     ctrlButton = Button(ctrlFrame,text=setting['ctrlButtonText'][0],
         command = lambda : Thread(target=ctrlPress).start()
     )
-    ctrlButton.pack(side='top', fill='x')
+    ctrlButton.pack(side='top')
 
     console = Text(consoleFrame,height=10, wrap=WORD,state=DISABLED,takefocus=0,relief=FLAT,bg="black",fg="#4E8D82",highlightthickness=0)
 
