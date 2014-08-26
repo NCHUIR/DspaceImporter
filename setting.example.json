@@ -1,0 +1,26 @@
+{
+    "safSshDspace":{
+
+        // SSH connection idpwd
+        "hostname":"",
+        "username":"",
+        "password":"",
+
+        // SAF tempary location on REMOTE
+        "SAFTmpDir":"",
+
+        // IF needs sudo ...
+        "requireRoot":"False",
+
+        // the REMOTE dspace executable file
+        "dspaceBin":"",
+
+        // mapfile tempary location on REMOTE
+        "mapfileDir":"",
+
+        // the eperson (see doc in dspace)
+        "DspaceIdentity":""
+    },
+    "OldFormatToCsv":{},
+    "csvToDspaceSaf":{}
+}

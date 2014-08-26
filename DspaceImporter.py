@@ -59,7 +59,9 @@ setting = {
 
     'askJsonDirPrompt':'請選擇 mapfile 之 json 格式之存放位置',
 
-    'askDirFallback':'./'
+    'askDirFallback':'./',
+
+    'allowDialogInThread':False
 }
 
 class InputDialog(object):
@@ -144,6 +146,8 @@ def getHandle(dirName,dirpath):
     if SafMatch:
         handle = SafMatch.group(1)
     else:
+        if not setting['allowDialogInThread']:
+            raise Exception("You need to rename the folder to give handle_id")
         handle = askInput(('[%s]: ' % dirName)+ setting['HandlePrompt'],"OK")
         while not handleRe.match(handle):
             handle = askInput(setting['HandlePrompt'],"OK")
@@ -199,6 +203,11 @@ def addToDirList(i,path):
 
 def addDir(i):
     dirpath = askdirectory()
+    if not setting['allowDialogInThread']:
+        print("choose SAF output path...")
+        getSafPath()
+        print("choose mapJson output path...")
+        getJsonOutputPath()
     if dirpath:
         print("directory chosen:",dirpath)
 
@@ -365,14 +374,23 @@ def buildGUI():
     global root,listbox,add_button,go_button,ctrlButton
     root = Tk("DspaceImporter")
 
+    allowDialogInThread = setting['allowDialogInThread']
+
     root.rowconfigure(0, weight=1)
     root.rowconfigure(1, weight=1)
 
-    addDirMap = [
-        lambda : Thread(target=addDir,args=(0,)).start(),
-        lambda : Thread(target=addDir,args=(1,)).start(),
-        lambda : Thread(target=addDir,args=(2,)).start()
-    ]
+    if allowDialogInThread:
+        addDirMap = [
+            lambda : Thread(target=addDir,args=(0,)).start(),
+            lambda : Thread(target=addDir,args=(1,)).start(),
+            lambda : Thread(target=addDir,args=(2,)).start()
+        ]
+    else:
+        addDirMap = [
+            lambda : addDir(0),
+            lambda : addDir(1),
+            lambda : addDir(2)
+        ]
     onselectMap = [lambda e : onselect(0),lambda e : onselect(1),lambda e : onselect(2)]
     goMap = [
         lambda : Thread(target=go,args=(0,)).start(),
