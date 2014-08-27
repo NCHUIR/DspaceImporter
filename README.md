@@ -22,11 +22,20 @@ For poor windows user, you need to [install python3.3](http://www.python.org/ftp
 
 ## Usage
 
-Because I cant compile (or freeze) it into a simple executable (.exe) so ...
-
  * If you just clone or download `DspaceImporter`, then ...
  	* copy `setting.example.json` => `setting.json`
  	* configure and set the value in `setting.json`
- * Open terminal or CMD
- * `cd` to the dir contains `DspaceImporter.py`
- * `python DspaceImporter.py` to
+ * If you are using linux or mac...
+	* `cd` to the dir contains `DspaceImporter.py`
+	* `python[3] DspaceImporter.py` and the GUI should show up...
+ * If you are using windows, you can simply double click the `DspaceImporter.bat` and the GUI should show up...
+
+## About GUI
+
+Just GUI although some behavior is weird XDD
+
+## Author
+
+ * PastLeo
+ * chgu82837@gmail.com
+ * 2014/8/27
