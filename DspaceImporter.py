@@ -50,7 +50,7 @@ setting = {
 
     'askSafLocationPrompt':'請選擇 SAF 格式放置位置',
 
-    'HandlePrefix':'123456789',
+    'HandlePrefix':'11455',
 
     'SAFCollFolderRegex':r'^.+\[(\d+)\]$', # Group $1 is the handle (digits after '/')
     'HandleRegex':r'\d+',
@@ -331,6 +331,7 @@ def go(i):
         if sshConnected:
             model[2].client.close()
 
+
         print("================================================")
         print("\tProcess Done!!")
         print("================================================")
@@ -454,7 +455,7 @@ model = None
 
 if __name__ == '__main__':
 
-    setting.update(loadJsonConfig(os.path.join(os.path.dirname(os.path.realpath(__file__)),'setting.json')))
+    setting.update(loadJsonConfig(os.path.join(os.path.dirname(os.path.realpath(__file__)),'setting140.120.80.8.json')))
 
     model = [
         OldFormatToCsv(setting['OldFormatToCsv']),
